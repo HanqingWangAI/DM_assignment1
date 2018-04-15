@@ -5,14 +5,15 @@
 - python3.5
 - numpy
 - matplotlib
-- fancyimpute
+- sklearn
+- [MICE](https://github.com/qweas120/MICE)
 
 ----------------------------------
 
 ## 数据说明
 ### 本报告使用的数据源有2个：
-1. NFL Play-by-Play 2009-2017数据集，见文件`Data/NFL Play by Play 2009-2017 (v4).csv`，共计102项属性，407688个数据条目。
-2. San Francisco Building Permits数据集，见文件`Data/Building_Permits.csv`，共计43项属性，198900个数据条目。
+1. NFL Play-by-Play 2009-2017数据集，共计102项属性，407688个数据条目。
+2. San Francisco Building Permits数据集，共计43项属性，198900个数据条目。
 
 ## 数据可视化和摘要
 
@@ -144,9 +145,12 @@
 ```
 
 
-### 数据可视化
-#### NFL Play by Play 2009-2017 属性可视化
+### **数据可视化**
 
+为了对数据的各项属性分布进行分析，实践分别对两个数据集的各项属性绘制了直方图（bins=20）、Q-Q图和盒图。分别用于可视化数据的具体分布、验证是否为正态分布以及观察离群点。对于Q-Q图，横坐标为标准正态分布的百分位数，纵坐标为对应属性的百分位数，若散点的分布靠近一条直线，则说明数据分布接近正态分布，该直线的斜率为正态分布的标准差，截距为均值。<br>
+以下为可视化结果。
+
+#### NFL Play by Play 2009-2017 属性可视化
 
 
 **Drive**
@@ -933,8 +937,763 @@
 
 
 
+实现如下
+```python
 
+    for i in range(0, num_att):
+        if i in nominal:
+            continue
+        name = event[0][i]
+
+        # print(i, name)
+        count = 0
+        lost = 0
+        ar = []
+        for j in range(1,cnt):
+            val = event[j][i]
+            if val in NA:
+                lost += 1
+            else:
+                ar.append(float(val))
+                count += 1
+        
+        ar = np.array(sorted(ar))
+        
+        plt.hist(ar,20)
+        plt.savefig('Figures/%s_%d.png'%(name,database_id))
+        plt.close()
+        y = []
+        for j in range(100):
+            y.append(ar[int(count*(1.0*(j)/100))])
+        y = np.array(y)
+        plt.scatter(x,y)
+        plt.savefig('Figures/qq_%s_%d.png'%(name,database_id))
+        plt.close()
+        plt.boxplot([ar],labels=[name])
+        plt.savefig('Figures/box_%s_%d.png'%(name,database_id))
+        plt.close()
+
+```
 
 ## 数据缺失的处理
 经对数据的观察发现，两个数据集中出现的缺失主要有两种，一种是由于项目本身的逻辑造成的缺失，某些属性是否存在依赖于前一个属性的布尔值的真假来决定的，若为假，从逻辑上应该没有这些属性。
-另一种缺失是在录入条目时未填写而产生的缺失。
+另一种缺失是在录入条目时未填写而产生的缺失。对数据缺失的处理主要针对第二种缺失，并采用下列四种方式进行处理：
+1. 将缺失部分剔除
+2. 用最高频率值来填补缺失值
+3. 通过属性的相关关系来填补缺失值
+4. 通过数据对象之间的相似性来填补缺失值
+
+从实验结果来看，不同的处理方式对分布会产生不同的变化，效果的优劣与特定属性相关。填补后的数据分布如下所示:<br>
+#### NFL Play by Play 2009-2017 缺失值填补对比
+
+
+
+**down**
+
+<table>
+<tr>
+<th><img src="Figures/down_0.png" width="200px"><p>剔除缺失</p></th>
+<th><img src="Figures/mf_down_0.png" width="200px"><p>高频填补</p></th>
+<th><img src="Figures/cm_down_0.png" width="200px"><p>相关属性填补</p></th>
+<th><img src="Figures/knn_down_0.png" width="200px"><p>KNN填补</p></th>
+</tr>
+</table>
+
+
+--------------------
+<br>
+
+
+**TimeSecs**
+
+<table>
+<tr>
+<th><img src="Figures/TimeSecs_0.png" width="200px"><p>剔除缺失</p></th>
+<th><img src="Figures/mf_TimeSecs_0.png" width="200px"><p>高频填补</p></th>
+<th><img src="Figures/cm_TimeSecs_0.png" width="200px"><p>相关属性填补</p></th>
+<th><img src="Figures/knn_TimeSecs_0.png" width="200px"><p>KNN填补</p></th>
+</tr>
+</table>
+
+
+--------------------
+<br>
+
+
+**PlayTimeDiff**
+
+<table>
+<tr>
+<th><img src="Figures/PlayTimeDiff_0.png" width="200px"><p>剔除缺失</p></th>
+<th><img src="Figures/mf_PlayTimeDiff_0.png" width="200px"><p>高频填补</p></th>
+<th><img src="Figures/cm_PlayTimeDiff_0.png" width="200px"><p>相关属性填补</p></th>
+<th><img src="Figures/knn_PlayTimeDiff_0.png" width="200px"><p>KNN填补</p></th>
+</tr>
+</table>
+
+
+--------------------
+<br>
+
+
+**yrdln**
+
+<table>
+<tr>
+<th><img src="Figures/yrdln_0.png" width="200px"><p>剔除缺失</p></th>
+<th><img src="Figures/mf_yrdln_0.png" width="200px"><p>高频填补</p></th>
+<th><img src="Figures/cm_yrdln_0.png" width="200px"><p>相关属性填补</p></th>
+<th><img src="Figures/knn_yrdln_0.png" width="200px"><p>KNN填补</p></th>
+</tr>
+</table>
+
+
+--------------------
+<br>
+
+
+**yrdline100**
+
+<table>
+<tr>
+<th><img src="Figures/yrdline100_0.png" width="200px"><p>剔除缺失</p></th>
+<th><img src="Figures/mf_yrdline100_0.png" width="200px"><p>高频填补</p></th>
+<th><img src="Figures/cm_yrdline100_0.png" width="200px"><p>相关属性填补</p></th>
+<th><img src="Figures/knn_yrdline100_0.png" width="200px"><p>KNN填补</p></th>
+</tr>
+</table>
+
+
+--------------------
+<br>
+
+
+**PosTeamScore**
+
+<table>
+<tr>
+<th><img src="Figures/PosTeamScore_0.png" width="200px"><p>剔除缺失</p></th>
+<th><img src="Figures/mf_PosTeamScore_0.png" width="200px"><p>高频填补</p></th>
+<th><img src="Figures/cm_PosTeamScore_0.png" width="200px"><p>相关属性填补</p></th>
+<th><img src="Figures/knn_PosTeamScore_0.png" width="200px"><p>KNN填补</p></th>
+</tr>
+</table>
+
+
+--------------------
+<br>
+
+
+**DefTeamScore**
+
+<table>
+<tr>
+<th><img src="Figures/DefTeamScore_0.png" width="200px"><p>剔除缺失</p></th>
+<th><img src="Figures/mf_DefTeamScore_0.png" width="200px"><p>高频填补</p></th>
+<th><img src="Figures/cm_DefTeamScore_0.png" width="200px"><p>相关属性填补</p></th>
+<th><img src="Figures/knn_DefTeamScore_0.png" width="200px"><p>KNN填补</p></th>
+</tr>
+</table>
+
+
+--------------------
+<br>
+
+
+**ScoreDiff**
+
+<table>
+<tr>
+<th><img src="Figures/ScoreDiff_0.png" width="200px"><p>剔除缺失</p></th>
+<th><img src="Figures/mf_ScoreDiff_0.png" width="200px"><p>高频填补</p></th>
+<th><img src="Figures/cm_ScoreDiff_0.png" width="200px"><p>相关属性填补</p></th>
+<th><img src="Figures/knn_ScoreDiff_0.png" width="200px"><p>KNN填补</p></th>
+</tr>
+</table>
+
+
+--------------------
+<br>
+
+
+**AbsScoreDiff**
+
+<table>
+<tr>
+<th><img src="Figures/AbsScoreDiff_0.png" width="200px"><p>剔除缺失</p></th>
+<th><img src="Figures/mf_AbsScoreDiff_0.png" width="200px"><p>高频填补</p></th>
+<th><img src="Figures/cm_AbsScoreDiff_0.png" width="200px"><p>相关属性填补</p></th>
+<th><img src="Figures/knn_AbsScoreDiff_0.png" width="200px"><p>KNN填补</p></th>
+</tr>
+</table>
+
+
+--------------------
+<br>
+
+
+**No_Score_Prob**
+
+<table>
+<tr>
+<th><img src="Figures/No_Score_Prob_0.png" width="200px"><p>剔除缺失</p></th>
+<th><img src="Figures/mf_No_Score_Prob_0.png" width="200px"><p>高频填补</p></th>
+<th><img src="Figures/cm_No_Score_Prob_0.png" width="200px"><p>相关属性填补</p></th>
+<th><img src="Figures/knn_No_Score_Prob_0.png" width="200px"><p>KNN填补</p></th>
+</tr>
+</table>
+
+
+--------------------
+<br>
+
+
+**Opp_Field_Goal_Prob**
+
+<table>
+<tr>
+<th><img src="Figures/Opp_Field_Goal_Prob_0.png" width="200px"><p>剔除缺失</p></th>
+<th><img src="Figures/mf_Opp_Field_Goal_Prob_0.png" width="200px"><p>高频填补</p></th>
+<th><img src="Figures/cm_Opp_Field_Goal_Prob_0.png" width="200px"><p>相关属性填补</p></th>
+<th><img src="Figures/knn_Opp_Field_Goal_Prob_0.png" width="200px"><p>KNN填补</p></th>
+</tr>
+</table>
+
+
+--------------------
+<br>
+
+
+**Opp_Safety_Prob**
+
+<table>
+<tr>
+<th><img src="Figures/Opp_Safety_Prob_0.png" width="200px"><p>剔除缺失</p></th>
+<th><img src="Figures/mf_Opp_Safety_Prob_0.png" width="200px"><p>高频填补</p></th>
+<th><img src="Figures/cm_Opp_Safety_Prob_0.png" width="200px"><p>相关属性填补</p></th>
+<th><img src="Figures/knn_Opp_Safety_Prob_0.png" width="200px"><p>KNN填补</p></th>
+</tr>
+</table>
+
+
+--------------------
+<br>
+
+
+**Opp_Touchdown_Prob**
+
+<table>
+<tr>
+<th><img src="Figures/Opp_Touchdown_Prob_0.png" width="200px"><p>剔除缺失</p></th>
+<th><img src="Figures/mf_Opp_Touchdown_Prob_0.png" width="200px"><p>高频填补</p></th>
+<th><img src="Figures/cm_Opp_Touchdown_Prob_0.png" width="200px"><p>相关属性填补</p></th>
+<th><img src="Figures/knn_Opp_Touchdown_Prob_0.png" width="200px"><p>KNN填补</p></th>
+</tr>
+</table>
+
+
+--------------------
+<br>
+
+
+**Field_Goal_Prob**
+
+<table>
+<tr>
+<th><img src="Figures/Field_Goal_Prob_0.png" width="200px"><p>剔除缺失</p></th>
+<th><img src="Figures/mf_Field_Goal_Prob_0.png" width="200px"><p>高频填补</p></th>
+<th><img src="Figures/cm_Field_Goal_Prob_0.png" width="200px"><p>相关属性填补</p></th>
+<th><img src="Figures/knn_Field_Goal_Prob_0.png" width="200px"><p>KNN填补</p></th>
+</tr>
+</table>
+
+
+--------------------
+<br>
+
+
+**Safety_Prob**
+
+<table>
+<tr>
+<th><img src="Figures/Safety_Prob_0.png" width="200px"><p>剔除缺失</p></th>
+<th><img src="Figures/mf_Safety_Prob_0.png" width="200px"><p>高频填补</p></th>
+<th><img src="Figures/cm_Safety_Prob_0.png" width="200px"><p>相关属性填补</p></th>
+<th><img src="Figures/knn_Safety_Prob_0.png" width="200px"><p>KNN填补</p></th>
+</tr>
+</table>
+
+
+--------------------
+<br>
+
+
+**Touchdown_Prob**
+
+<table>
+<tr>
+<th><img src="Figures/Touchdown_Prob_0.png" width="200px"><p>剔除缺失</p></th>
+<th><img src="Figures/mf_Touchdown_Prob_0.png" width="200px"><p>高频填补</p></th>
+<th><img src="Figures/cm_Touchdown_Prob_0.png" width="200px"><p>相关属性填补</p></th>
+<th><img src="Figures/knn_Touchdown_Prob_0.png" width="200px"><p>KNN填补</p></th>
+</tr>
+</table>
+
+
+--------------------
+<br>
+
+
+**ExpPts**
+
+<table>
+<tr>
+<th><img src="Figures/ExpPts_0.png" width="200px"><p>剔除缺失</p></th>
+<th><img src="Figures/mf_ExpPts_0.png" width="200px"><p>高频填补</p></th>
+<th><img src="Figures/cm_ExpPts_0.png" width="200px"><p>相关属性填补</p></th>
+<th><img src="Figures/knn_ExpPts_0.png" width="200px"><p>KNN填补</p></th>
+</tr>
+</table>
+
+
+--------------------
+<br>
+
+
+**EPA**
+
+<table>
+<tr>
+<th><img src="Figures/EPA_0.png" width="200px"><p>剔除缺失</p></th>
+<th><img src="Figures/mf_EPA_0.png" width="200px"><p>高频填补</p></th>
+<th><img src="Figures/cm_EPA_0.png" width="200px"><p>相关属性填补</p></th>
+<th><img src="Figures/knn_EPA_0.png" width="200px"><p>KNN填补</p></th>
+</tr>
+</table>
+
+
+--------------------
+<br>
+
+
+**airEPA**
+
+<table>
+<tr>
+<th><img src="Figures/airEPA_0.png" width="200px"><p>剔除缺失</p></th>
+<th><img src="Figures/mf_airEPA_0.png" width="200px"><p>高频填补</p></th>
+<th><img src="Figures/cm_airEPA_0.png" width="200px"><p>相关属性填补</p></th>
+<th><img src="Figures/knn_airEPA_0.png" width="200px"><p>KNN填补</p></th>
+</tr>
+</table>
+
+
+--------------------
+<br>
+
+
+**yacEPA**
+
+<table>
+<tr>
+<th><img src="Figures/yacEPA_0.png" width="200px"><p>剔除缺失</p></th>
+<th><img src="Figures/mf_yacEPA_0.png" width="200px"><p>高频填补</p></th>
+<th><img src="Figures/cm_yacEPA_0.png" width="200px"><p>相关属性填补</p></th>
+<th><img src="Figures/knn_yacEPA_0.png" width="200px"><p>KNN填补</p></th>
+</tr>
+</table>
+
+
+--------------------
+<br>
+
+
+**Home_WP_pre**
+
+<table>
+<tr>
+<th><img src="Figures/Home_WP_pre_0.png" width="200px"><p>剔除缺失</p></th>
+<th><img src="Figures/mf_Home_WP_pre_0.png" width="200px"><p>高频填补</p></th>
+<th><img src="Figures/cm_Home_WP_pre_0.png" width="200px"><p>相关属性填补</p></th>
+<th><img src="Figures/knn_Home_WP_pre_0.png" width="200px"><p>KNN填补</p></th>
+</tr>
+</table>
+
+
+--------------------
+<br>
+
+
+**Away_WP_pre**
+
+<table>
+<tr>
+<th><img src="Figures/Away_WP_pre_0.png" width="200px"><p>剔除缺失</p></th>
+<th><img src="Figures/mf_Away_WP_pre_0.png" width="200px"><p>高频填补</p></th>
+<th><img src="Figures/cm_Away_WP_pre_0.png" width="200px"><p>相关属性填补</p></th>
+<th><img src="Figures/knn_Away_WP_pre_0.png" width="200px"><p>KNN填补</p></th>
+</tr>
+</table>
+
+
+--------------------
+<br>
+
+
+**Home_WP_post**
+
+<table>
+<tr>
+<th><img src="Figures/Home_WP_post_0.png" width="200px"><p>剔除缺失</p></th>
+<th><img src="Figures/mf_Home_WP_post_0.png" width="200px"><p>高频填补</p></th>
+<th><img src="Figures/cm_Home_WP_post_0.png" width="200px"><p>相关属性填补</p></th>
+<th><img src="Figures/knn_Home_WP_post_0.png" width="200px"><p>KNN填补</p></th>
+</tr>
+</table>
+
+
+--------------------
+<br>
+
+
+**Away_WP_post**
+
+<table>
+<tr>
+<th><img src="Figures/Away_WP_post_0.png" width="200px"><p>剔除缺失</p></th>
+<th><img src="Figures/mf_Away_WP_post_0.png" width="200px"><p>高频填补</p></th>
+<th><img src="Figures/cm_Away_WP_post_0.png" width="200px"><p>相关属性填补</p></th>
+<th><img src="Figures/knn_Away_WP_post_0.png" width="200px"><p>KNN填补</p></th>
+</tr>
+</table>
+
+
+--------------------
+<br>
+
+
+**Win_Prob**
+
+<table>
+<tr>
+<th><img src="Figures/Win_Prob_0.png" width="200px"><p>剔除缺失</p></th>
+<th><img src="Figures/mf_Win_Prob_0.png" width="200px"><p>高频填补</p></th>
+<th><img src="Figures/cm_Win_Prob_0.png" width="200px"><p>相关属性填补</p></th>
+<th><img src="Figures/knn_Win_Prob_0.png" width="200px"><p>KNN填补</p></th>
+</tr>
+</table>
+
+
+--------------------
+<br>
+
+
+**WPA**
+
+<table>
+<tr>
+<th><img src="Figures/WPA_0.png" width="200px"><p>剔除缺失</p></th>
+<th><img src="Figures/mf_WPA_0.png" width="200px"><p>高频填补</p></th>
+<th><img src="Figures/cm_WPA_0.png" width="200px"><p>相关属性填补</p></th>
+<th><img src="Figures/knn_WPA_0.png" width="200px"><p>KNN填补</p></th>
+</tr>
+</table>
+
+
+--------------------
+<br>
+
+
+**airWPA**
+
+<table>
+<tr>
+<th><img src="Figures/airWPA_0.png" width="200px"><p>剔除缺失</p></th>
+<th><img src="Figures/mf_airWPA_0.png" width="200px"><p>高频填补</p></th>
+<th><img src="Figures/cm_airWPA_0.png" width="200px"><p>相关属性填补</p></th>
+<th><img src="Figures/knn_airWPA_0.png" width="200px"><p>KNN填补</p></th>
+</tr>
+</table>
+
+
+--------------------
+<br>
+
+
+**yacWPA**
+
+<table>
+<tr>
+<th><img src="Figures/yacWPA_0.png" width="200px"><p>剔除缺失</p></th>
+<th><img src="Figures/mf_yacWPA_0.png" width="200px"><p>高频填补</p></th>
+<th><img src="Figures/cm_yacWPA_0.png" width="200px"><p>相关属性填补</p></th>
+<th><img src="Figures/knn_yacWPA_0.png" width="200px"><p>KNN填补</p></th>
+</tr>
+</table>
+
+
+--------------------
+<br>
+
+
+#### San Francisco Building Permits 缺失值填补对比
+
+
+
+**Unit**
+
+<table>
+<tr>
+<th><img src="Figures/Unit_1.png" width="200px"><p>剔除缺失</p></th>
+<th><img src="Figures/mf_Unit_1.png" width="200px"><p>高频填补</p></th>
+<th><img src="Figures/cm_Unit_1.png" width="200px"><p>相关属性填补</p></th>
+<th><img src="Figures/knn_Unit_1.png" width="200px"><p>KNN填补</p></th>
+</tr>
+</table>
+
+
+--------------------
+<br>
+
+
+**Number of Existing Stories**
+
+<table>
+<tr>
+<th><img src="Figures/Number of Existing Stories_1.png" width="200px"><p>剔除缺失</p></th>
+<th><img src="Figures/mf_Number of Existing Stories_1.png" width="200px"><p>高频填补</p></th>
+<th><img src="Figures/cm_Number of Existing Stories_1.png" width="200px"><p>相关属性填补</p></th>
+<th><img src="Figures/knn_Number of Existing Stories_1.png" width="200px"><p>KNN填补</p></th>
+</tr>
+</table>
+
+
+--------------------
+<br>
+
+
+**Number of Proposed Stories**
+
+<table>
+<tr>
+<th><img src="Figures/Number of Proposed Stories_1.png" width="200px"><p>剔除缺失</p></th>
+<th><img src="Figures/mf_Number of Proposed Stories_1.png" width="200px"><p>高频填补</p></th>
+<th><img src="Figures/cm_Number of Proposed Stories_1.png" width="200px"><p>相关属性填补</p></th>
+<th><img src="Figures/knn_Number of Proposed Stories_1.png" width="200px"><p>KNN填补</p></th>
+</tr>
+</table>
+
+
+--------------------
+<br>
+
+
+**Estimated Cost**
+
+<table>
+<tr>
+<th><img src="Figures/Estimated Cost_1.png" width="200px"><p>剔除缺失</p></th>
+<th><img src="Figures/mf_Estimated Cost_1.png" width="200px"><p>高频填补</p></th>
+<th><img src="Figures/cm_Estimated Cost_1.png" width="200px"><p>相关属性填补</p></th>
+<th><img src="Figures/knn_Estimated Cost_1.png" width="200px"><p>KNN填补</p></th>
+</tr>
+</table>
+
+
+--------------------
+<br>
+
+
+**Revised Cost**
+
+<table>
+<tr>
+<th><img src="Figures/Revised Cost_1.png" width="200px"><p>剔除缺失</p></th>
+<th><img src="Figures/mf_Revised Cost_1.png" width="200px"><p>高频填补</p></th>
+<th><img src="Figures/cm_Revised Cost_1.png" width="200px"><p>相关属性填补</p></th>
+<th><img src="Figures/knn_Revised Cost_1.png" width="200px"><p>KNN填补</p></th>
+</tr>
+</table>
+
+
+--------------------
+<br>
+
+
+**Proposed Units**
+
+<table>
+<tr>
+<th><img src="Figures/Proposed Units_1.png" width="200px"><p>剔除缺失</p></th>
+<th><img src="Figures/mf_Proposed Units_1.png" width="200px"><p>高频填补</p></th>
+<th><img src="Figures/cm_Proposed Units_1.png" width="200px"><p>相关属性填补</p></th>
+<th><img src="Figures/knn_Proposed Units_1.png" width="200px"><p>KNN填补</p></th>
+</tr>
+</table>
+
+
+--------------------
+<br>
+
+
+**Plansets**
+
+<table>
+<tr>
+<th><img src="Figures/Plansets_1.png" width="200px"><p>剔除缺失</p></th>
+<th><img src="Figures/mf_Plansets_1.png" width="200px"><p>高频填补</p></th>
+<th><img src="Figures/cm_Plansets_1.png" width="200px"><p>相关属性填补</p></th>
+<th><img src="Figures/knn_Plansets_1.png" width="200px"><p>KNN填补</p></th>
+</tr>
+</table>
+
+
+--------------------
+<br>
+
+
+
+核心实现如下
+```python
+
+def impute(database_id):
+    from sklearn.linear_model import LinearRegression
+    from utils.skmice import MiceImputer
+    from sklearn.neighbors import NearestNeighbors
+    cnt = 0
+    with open('Data/NA_%d'%database_id,'r') as fp:
+        nas = [int(n)-1 for n in fp.read().split(' ')]
+
+    with open(database[database_id],encoding='utf-8') as fp:
+    # with open(database[database_id]) as fp:
+        reader =  csv.reader(fp)
+        for row in reader:
+            event.append(row)
+            cnt += 1
+
+    num_att = len(event[0])
+
+    # Impute with the most frequence value
+    for i in nas:
+        name = event[0][i]
+        dic = {}
+        maxx = 0
+        max_val = 0
+        lost = 0
+        ar = []
+        for j in range(1,cnt):
+            val = event[j][i]
+            if val not in NA:
+                val = float(val)
+                ar.append(val)
+                if val in dic:
+                    dic[val] += 1
+                else:
+                    dic[val] = 1
+                if maxx < dic[val]:
+                    maxx = dic[val]
+                    max_val = val
+            else:
+                lost += 1
+        
+        for j in range(lost):
+            ar.append(max_val)
+        
+        ar = np.array(ar)
+        plt.hist(ar,20)
+        plt.savefig('Figures/mf_%s_%d.png'%(name,database_id))
+        plt.close()
+    
+
+    # Impute with the corelation matrix
+    ar = []
+    for i in nas:
+        name = event[0][i]
+        temp = []
+
+        for j in range(1,cnt):
+            val = event[j][i]
+            if val not in NA:
+                val = float(val)
+                temp.append(val)
+            else:
+                temp.append(np.nan)
+
+        ar.append(temp)
+    
+    ar = np.array(ar)
+    ar = np.transpose(ar)
+    # print(ar.shape)
+
+    # ar = ar[:101,:]
+    # cnt = ar.shape[0]
+    batch_num = 1000
+    imputer = MiceImputer()
+    batchsize = int((cnt)/batch_num)
+    for i in range(batch_num):
+        print(i)
+        if i == batch_num - 1:
+            ar[i*batchsize:,:] = imputer.transform(ar[i*batchsize:,:], LinearRegression, 5)
+        else:
+            ar[i*batchsize:(i+1)*batchsize,:] = imputer.transform(ar[i*batchsize:(i+1)*batchsize,:], LinearRegression, 5)
+    # print(ar.shape)
+    for _,i in enumerate(nas):
+        # print(name)
+        # print(ar[:,_])
+        name = event[0][i]
+        plt.hist(ar[:,_],20)
+        plt.savefig('Figures/cm_%s_%d.png'%(name,database_id))
+        plt.close()
+    
+    # Impute using KNN
+    ar = []
+    for i in nas:
+        name = event[0][i]
+        temp = []
+
+        for j in range(1,cnt):
+            val = event[j][i]
+            if val not in NA:
+                val = float(val)
+                temp.append(val)
+            else:
+                temp.append(np.nan)
+
+        ar.append(temp)
+    
+    ar = np.array(ar)
+    ar = np.transpose(ar)
+
+    batchsize = int((cnt)/1000)
+    for i in range(1000):
+        if i == 999:
+            batch = np.array(ar[i*batchsize:,:])
+        else:
+            batch = np.array(ar[i*batchsize:(i+1)*batchsize,:])
+        
+        mask = np.isnan(batch)
+
+        index = np.where(mask==True)
+        batch[index[0],index[1]] = 0
+
+        neig = NearestNeighbors(n_neighbors=5, algorithm="ball_tree").fit(batch)
+
+        for _, j in enumerate(index[0]):
+            d, pos = neig.kneighbors([batch[j]])
+            pos = pos[0]
+            for a in range(1,5):
+                if batch[pos[a],index[1][_]] != 0:
+                    batch[j,index[1][_]] = batch[pos[a],index[1][_]]
+        
+        if i == 999:
+            ar[i*batchsize:,:] = batch
+        else:
+            ar[i*batchsize:(i+1)*batchsize,:] = batch
+
+    for _,i in enumerate(nas):
+        name = event[0][i]
+        plt.hist(ar[:,_],20)
+        plt.savefig('Figures/knn_%s_%d.png'%(name,database_id))
+        plt.close()
+
+```
