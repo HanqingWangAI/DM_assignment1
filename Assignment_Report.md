@@ -106,6 +106,7 @@
 <br><br>
 
 **<center>San Francisco Building Permits</center>**
+
 | attr_name | Max | Min | Mean | Median | Q1 | Q3 | NA |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 |Unit|6004.00|0.00|78.52|0.00|0.00|1.00|169421|
