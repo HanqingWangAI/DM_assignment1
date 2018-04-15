@@ -147,373 +147,789 @@
 ### 数据可视化
 #### NFL Play by Play 2009-2017 属性可视化
 
+
+
+**Drive**
+
 <table>
 <tr>
-<th><img src="Figures/Drive_0.png" width="250px"></th>
-<th><img src="Figures/qq_Drive_0.png" width="250px"></th>
-<th><img src="Figures/box_Drive_0.png" width="250px"></th>
+<th><img src="Figures/Drive_0.png" width="250px"><p>Histogram</p></th>
+<th><img src="Figures/qq_Drive_0.png" width="250px"><p>Q-Q plot</p></th>
+<th><img src="Figures/box_Drive_0.png" width="250px"><p>Boxplot</p></th>
 </tr>
-</table><center>Drive Histogram, Q-Q plot, Boxplot</center><br>
+</table>
+
+
+--------------------
+<br>
+
+
+**qtr**
+
 <table>
 <tr>
-<th><img src="Figures/qtr_0.png" width="250px"></th>
-<th><img src="Figures/qq_qtr_0.png" width="250px"></th>
-<th><img src="Figures/box_qtr_0.png" width="250px"></th>
+<th><img src="Figures/qtr_0.png" width="250px"><p>Histogram</p></th>
+<th><img src="Figures/qq_qtr_0.png" width="250px"><p>Q-Q plot</p></th>
+<th><img src="Figures/box_qtr_0.png" width="250px"><p>Boxplot</p></th>
 </tr>
-</table><center>qtr Histogram, Q-Q plot, Boxplot</center><br>
+</table>
+
+
+--------------------
+<br>
+
+
+**down**
+
 <table>
 <tr>
-<th><img src="Figures/down_0.png" width="250px"></th>
-<th><img src="Figures/qq_down_0.png" width="250px"></th>
-<th><img src="Figures/box_down_0.png" width="250px"></th>
+<th><img src="Figures/down_0.png" width="250px"><p>Histogram</p></th>
+<th><img src="Figures/qq_down_0.png" width="250px"><p>Q-Q plot</p></th>
+<th><img src="Figures/box_down_0.png" width="250px"><p>Boxplot</p></th>
 </tr>
-</table><center>down Histogram, Q-Q plot, Boxplot</center><br>
+</table>
+
+
+--------------------
+<br>
+
+
+**TimeUnder**
+
 <table>
 <tr>
-<th><img src="Figures/TimeUnder_0.png" width="250px"></th>
-<th><img src="Figures/qq_TimeUnder_0.png" width="250px"></th>
-<th><img src="Figures/box_TimeUnder_0.png" width="250px"></th>
+<th><img src="Figures/TimeUnder_0.png" width="250px"><p>Histogram</p></th>
+<th><img src="Figures/qq_TimeUnder_0.png" width="250px"><p>Q-Q plot</p></th>
+<th><img src="Figures/box_TimeUnder_0.png" width="250px"><p>Boxplot</p></th>
 </tr>
-</table><center>TimeUnder Histogram, Q-Q plot, Boxplot</center><br>
+</table>
+
+
+--------------------
+<br>
+
+
+**TimeSecs**
+
 <table>
 <tr>
-<th><img src="Figures/TimeSecs_0.png" width="250px"></th>
-<th><img src="Figures/qq_TimeSecs_0.png" width="250px"></th>
-<th><img src="Figures/box_TimeSecs_0.png" width="250px"></th>
+<th><img src="Figures/TimeSecs_0.png" width="250px"><p>Histogram</p></th>
+<th><img src="Figures/qq_TimeSecs_0.png" width="250px"><p>Q-Q plot</p></th>
+<th><img src="Figures/box_TimeSecs_0.png" width="250px"><p>Boxplot</p></th>
 </tr>
-</table><center>TimeSecs Histogram, Q-Q plot, Boxplot</center><br>
+</table>
+
+
+--------------------
+<br>
+
+
+**PlayTimeDiff**
+
 <table>
 <tr>
-<th><img src="Figures/PlayTimeDiff_0.png" width="250px"></th>
-<th><img src="Figures/qq_PlayTimeDiff_0.png" width="250px"></th>
-<th><img src="Figures/box_PlayTimeDiff_0.png" width="250px"></th>
+<th><img src="Figures/PlayTimeDiff_0.png" width="250px"><p>Histogram</p></th>
+<th><img src="Figures/qq_PlayTimeDiff_0.png" width="250px"><p>Q-Q plot</p></th>
+<th><img src="Figures/box_PlayTimeDiff_0.png" width="250px"><p>Boxplot</p></th>
 </tr>
-</table><center>PlayTimeDiff Histogram, Q-Q plot, Boxplot</center><br>
+</table>
+
+
+--------------------
+<br>
+
+
+**yrdln**
+
 <table>
 <tr>
-<th><img src="Figures/yrdln_0.png" width="250px"></th>
-<th><img src="Figures/qq_yrdln_0.png" width="250px"></th>
-<th><img src="Figures/box_yrdln_0.png" width="250px"></th>
+<th><img src="Figures/yrdln_0.png" width="250px"><p>Histogram</p></th>
+<th><img src="Figures/qq_yrdln_0.png" width="250px"><p>Q-Q plot</p></th>
+<th><img src="Figures/box_yrdln_0.png" width="250px"><p>Boxplot</p></th>
 </tr>
-</table><center>yrdln Histogram, Q-Q plot, Boxplot</center><br>
+</table>
+
+
+--------------------
+<br>
+
+
+**yrdline100**
+
 <table>
 <tr>
-<th><img src="Figures/yrdline100_0.png" width="250px"></th>
-<th><img src="Figures/qq_yrdline100_0.png" width="250px"></th>
-<th><img src="Figures/box_yrdline100_0.png" width="250px"></th>
+<th><img src="Figures/yrdline100_0.png" width="250px"><p>Histogram</p></th>
+<th><img src="Figures/qq_yrdline100_0.png" width="250px"><p>Q-Q plot</p></th>
+<th><img src="Figures/box_yrdline100_0.png" width="250px"><p>Boxplot</p></th>
 </tr>
-</table><center>yrdline100 Histogram, Q-Q plot, Boxplot</center><br>
+</table>
+
+
+--------------------
+<br>
+
+
+**ydstogo**
+
 <table>
 <tr>
-<th><img src="Figures/ydstogo_0.png" width="250px"></th>
-<th><img src="Figures/qq_ydstogo_0.png" width="250px"></th>
-<th><img src="Figures/box_ydstogo_0.png" width="250px"></th>
+<th><img src="Figures/ydstogo_0.png" width="250px"><p>Histogram</p></th>
+<th><img src="Figures/qq_ydstogo_0.png" width="250px"><p>Q-Q plot</p></th>
+<th><img src="Figures/box_ydstogo_0.png" width="250px"><p>Boxplot</p></th>
 </tr>
-</table><center>ydstogo Histogram, Q-Q plot, Boxplot</center><br>
+</table>
+
+
+--------------------
+<br>
+
+
+**ydsnet**
+
 <table>
 <tr>
-<th><img src="Figures/ydsnet_0.png" width="250px"></th>
-<th><img src="Figures/qq_ydsnet_0.png" width="250px"></th>
-<th><img src="Figures/box_ydsnet_0.png" width="250px"></th>
+<th><img src="Figures/ydsnet_0.png" width="250px"><p>Histogram</p></th>
+<th><img src="Figures/qq_ydsnet_0.png" width="250px"><p>Q-Q plot</p></th>
+<th><img src="Figures/box_ydsnet_0.png" width="250px"><p>Boxplot</p></th>
 </tr>
-</table><center>ydsnet Histogram, Q-Q plot, Boxplot</center><br>
+</table>
+
+
+--------------------
+<br>
+
+
+**Yards.Gained**
+
 <table>
 <tr>
-<th><img src="Figures/Yards.Gained_0.png" width="250px"></th>
-<th><img src="Figures/qq_Yards.Gained_0.png" width="250px"></th>
-<th><img src="Figures/box_Yards.Gained_0.png" width="250px"></th>
+<th><img src="Figures/Yards.Gained_0.png" width="250px"><p>Histogram</p></th>
+<th><img src="Figures/qq_Yards.Gained_0.png" width="250px"><p>Q-Q plot</p></th>
+<th><img src="Figures/box_Yards.Gained_0.png" width="250px"><p>Boxplot</p></th>
 </tr>
-</table><center>Yards.Gained Histogram, Q-Q plot, Boxplot</center><br>
+</table>
+
+
+--------------------
+<br>
+
+
+**Safety**
+
 <table>
 <tr>
-<th><img src="Figures/Safety_0.png" width="250px"></th>
-<th><img src="Figures/qq_Safety_0.png" width="250px"></th>
-<th><img src="Figures/box_Safety_0.png" width="250px"></th>
+<th><img src="Figures/Safety_0.png" width="250px"><p>Histogram</p></th>
+<th><img src="Figures/qq_Safety_0.png" width="250px"><p>Q-Q plot</p></th>
+<th><img src="Figures/box_Safety_0.png" width="250px"><p>Boxplot</p></th>
 </tr>
-</table><center>Safety Histogram, Q-Q plot, Boxplot</center><br>
+</table>
+
+
+--------------------
+<br>
+
+
+**AirYards**
+
 <table>
 <tr>
-<th><img src="Figures/AirYards_0.png" width="250px"></th>
-<th><img src="Figures/qq_AirYards_0.png" width="250px"></th>
-<th><img src="Figures/box_AirYards_0.png" width="250px"></th>
+<th><img src="Figures/AirYards_0.png" width="250px"><p>Histogram</p></th>
+<th><img src="Figures/qq_AirYards_0.png" width="250px"><p>Q-Q plot</p></th>
+<th><img src="Figures/box_AirYards_0.png" width="250px"><p>Boxplot</p></th>
 </tr>
-</table><center>AirYards Histogram, Q-Q plot, Boxplot</center><br>
+</table>
+
+
+--------------------
+<br>
+
+
+**YardsAfterCatch**
+
 <table>
 <tr>
-<th><img src="Figures/YardsAfterCatch_0.png" width="250px"></th>
-<th><img src="Figures/qq_YardsAfterCatch_0.png" width="250px"></th>
-<th><img src="Figures/box_YardsAfterCatch_0.png" width="250px"></th>
+<th><img src="Figures/YardsAfterCatch_0.png" width="250px"><p>Histogram</p></th>
+<th><img src="Figures/qq_YardsAfterCatch_0.png" width="250px"><p>Q-Q plot</p></th>
+<th><img src="Figures/box_YardsAfterCatch_0.png" width="250px"><p>Boxplot</p></th>
 </tr>
-</table><center>YardsAfterCatch Histogram, Q-Q plot, Boxplot</center><br>
+</table>
+
+
+--------------------
+<br>
+
+
+**FieldGoalDistance**
+
 <table>
 <tr>
-<th><img src="Figures/FieldGoalDistance_0.png" width="250px"></th>
-<th><img src="Figures/qq_FieldGoalDistance_0.png" width="250px"></th>
-<th><img src="Figures/box_FieldGoalDistance_0.png" width="250px"></th>
+<th><img src="Figures/FieldGoalDistance_0.png" width="250px"><p>Histogram</p></th>
+<th><img src="Figures/qq_FieldGoalDistance_0.png" width="250px"><p>Q-Q plot</p></th>
+<th><img src="Figures/box_FieldGoalDistance_0.png" width="250px"><p>Boxplot</p></th>
 </tr>
-</table><center>FieldGoalDistance Histogram, Q-Q plot, Boxplot</center><br>
+</table>
+
+
+--------------------
+<br>
+
+
+**PosTeamScore**
+
 <table>
 <tr>
-<th><img src="Figures/PosTeamScore_0.png" width="250px"></th>
-<th><img src="Figures/qq_PosTeamScore_0.png" width="250px"></th>
-<th><img src="Figures/box_PosTeamScore_0.png" width="250px"></th>
+<th><img src="Figures/PosTeamScore_0.png" width="250px"><p>Histogram</p></th>
+<th><img src="Figures/qq_PosTeamScore_0.png" width="250px"><p>Q-Q plot</p></th>
+<th><img src="Figures/box_PosTeamScore_0.png" width="250px"><p>Boxplot</p></th>
 </tr>
-</table><center>PosTeamScore Histogram, Q-Q plot, Boxplot</center><br>
+</table>
+
+
+--------------------
+<br>
+
+
+**DefTeamScore**
+
 <table>
 <tr>
-<th><img src="Figures/DefTeamScore_0.png" width="250px"></th>
-<th><img src="Figures/qq_DefTeamScore_0.png" width="250px"></th>
-<th><img src="Figures/box_DefTeamScore_0.png" width="250px"></th>
+<th><img src="Figures/DefTeamScore_0.png" width="250px"><p>Histogram</p></th>
+<th><img src="Figures/qq_DefTeamScore_0.png" width="250px"><p>Q-Q plot</p></th>
+<th><img src="Figures/box_DefTeamScore_0.png" width="250px"><p>Boxplot</p></th>
 </tr>
-</table><center>DefTeamScore Histogram, Q-Q plot, Boxplot</center><br>
+</table>
+
+
+--------------------
+<br>
+
+
+**ScoreDiff**
+
 <table>
 <tr>
-<th><img src="Figures/ScoreDiff_0.png" width="250px"></th>
-<th><img src="Figures/qq_ScoreDiff_0.png" width="250px"></th>
-<th><img src="Figures/box_ScoreDiff_0.png" width="250px"></th>
+<th><img src="Figures/ScoreDiff_0.png" width="250px"><p>Histogram</p></th>
+<th><img src="Figures/qq_ScoreDiff_0.png" width="250px"><p>Q-Q plot</p></th>
+<th><img src="Figures/box_ScoreDiff_0.png" width="250px"><p>Boxplot</p></th>
 </tr>
-</table><center>ScoreDiff Histogram, Q-Q plot, Boxplot</center><br>
+</table>
+
+
+--------------------
+<br>
+
+
+**AbsScoreDiff**
+
 <table>
 <tr>
-<th><img src="Figures/AbsScoreDiff_0.png" width="250px"></th>
-<th><img src="Figures/qq_AbsScoreDiff_0.png" width="250px"></th>
-<th><img src="Figures/box_AbsScoreDiff_0.png" width="250px"></th>
+<th><img src="Figures/AbsScoreDiff_0.png" width="250px"><p>Histogram</p></th>
+<th><img src="Figures/qq_AbsScoreDiff_0.png" width="250px"><p>Q-Q plot</p></th>
+<th><img src="Figures/box_AbsScoreDiff_0.png" width="250px"><p>Boxplot</p></th>
 </tr>
-</table><center>AbsScoreDiff Histogram, Q-Q plot, Boxplot</center><br>
+</table>
+
+
+--------------------
+<br>
+
+
+**posteam_timeouts_pre**
+
 <table>
 <tr>
-<th><img src="Figures/posteam_timeouts_pre_0.png" width="250px"></th>
-<th><img src="Figures/qq_posteam_timeouts_pre_0.png" width="250px"></th>
-<th><img src="Figures/box_posteam_timeouts_pre_0.png" width="250px"></th>
+<th><img src="Figures/posteam_timeouts_pre_0.png" width="250px"><p>Histogram</p></th>
+<th><img src="Figures/qq_posteam_timeouts_pre_0.png" width="250px"><p>Q-Q plot</p></th>
+<th><img src="Figures/box_posteam_timeouts_pre_0.png" width="250px"><p>Boxplot</p></th>
 </tr>
-</table><center>posteam_timeouts_pre Histogram, Q-Q plot, Boxplot</center><br>
+</table>
+
+
+--------------------
+<br>
+
+
+**HomeTimeouts_Remaining_Pre**
+
 <table>
 <tr>
-<th><img src="Figures/HomeTimeouts_Remaining_Pre_0.png" width="250px"></th>
-<th><img src="Figures/qq_HomeTimeouts_Remaining_Pre_0.png" width="250px"></th>
-<th><img src="Figures/box_HomeTimeouts_Remaining_Pre_0.png" width="250px"></th>
+<th><img src="Figures/HomeTimeouts_Remaining_Pre_0.png" width="250px"><p>Histogram</p></th>
+<th><img src="Figures/qq_HomeTimeouts_Remaining_Pre_0.png" width="250px"><p>Q-Q plot</p></th>
+<th><img src="Figures/box_HomeTimeouts_Remaining_Pre_0.png" width="250px"><p>Boxplot</p></th>
 </tr>
-</table><center>HomeTimeouts_Remaining_Pre Histogram, Q-Q plot, Boxplot</center><br>
+</table>
+
+
+--------------------
+<br>
+
+
+**AwayTimeouts_Remaining_Pre**
+
 <table>
 <tr>
-<th><img src="Figures/AwayTimeouts_Remaining_Pre_0.png" width="250px"></th>
-<th><img src="Figures/qq_AwayTimeouts_Remaining_Pre_0.png" width="250px"></th>
-<th><img src="Figures/box_AwayTimeouts_Remaining_Pre_0.png" width="250px"></th>
+<th><img src="Figures/AwayTimeouts_Remaining_Pre_0.png" width="250px"><p>Histogram</p></th>
+<th><img src="Figures/qq_AwayTimeouts_Remaining_Pre_0.png" width="250px"><p>Q-Q plot</p></th>
+<th><img src="Figures/box_AwayTimeouts_Remaining_Pre_0.png" width="250px"><p>Boxplot</p></th>
 </tr>
-</table><center>AwayTimeouts_Remaining_Pre Histogram, Q-Q plot, Boxplot</center><br>
+</table>
+
+
+--------------------
+<br>
+
+
+**HomeTimeouts_Remaining_Post**
+
 <table>
 <tr>
-<th><img src="Figures/HomeTimeouts_Remaining_Post_0.png" width="250px"></th>
-<th><img src="Figures/qq_HomeTimeouts_Remaining_Post_0.png" width="250px"></th>
-<th><img src="Figures/box_HomeTimeouts_Remaining_Post_0.png" width="250px"></th>
+<th><img src="Figures/HomeTimeouts_Remaining_Post_0.png" width="250px"><p>Histogram</p></th>
+<th><img src="Figures/qq_HomeTimeouts_Remaining_Post_0.png" width="250px"><p>Q-Q plot</p></th>
+<th><img src="Figures/box_HomeTimeouts_Remaining_Post_0.png" width="250px"><p>Boxplot</p></th>
 </tr>
-</table><center>HomeTimeouts_Remaining_Post Histogram, Q-Q plot, Boxplot</center><br>
+</table>
+
+
+--------------------
+<br>
+
+
+**AwayTimeouts_Remaining_Post**
+
 <table>
 <tr>
-<th><img src="Figures/AwayTimeouts_Remaining_Post_0.png" width="250px"></th>
-<th><img src="Figures/qq_AwayTimeouts_Remaining_Post_0.png" width="250px"></th>
-<th><img src="Figures/box_AwayTimeouts_Remaining_Post_0.png" width="250px"></th>
+<th><img src="Figures/AwayTimeouts_Remaining_Post_0.png" width="250px"><p>Histogram</p></th>
+<th><img src="Figures/qq_AwayTimeouts_Remaining_Post_0.png" width="250px"><p>Q-Q plot</p></th>
+<th><img src="Figures/box_AwayTimeouts_Remaining_Post_0.png" width="250px"><p>Boxplot</p></th>
 </tr>
-</table><center>AwayTimeouts_Remaining_Post Histogram, Q-Q plot, Boxplot</center><br>
+</table>
+
+
+--------------------
+<br>
+
+
+**No_Score_Prob**
+
 <table>
 <tr>
-<th><img src="Figures/No_Score_Prob_0.png" width="250px"></th>
-<th><img src="Figures/qq_No_Score_Prob_0.png" width="250px"></th>
-<th><img src="Figures/box_No_Score_Prob_0.png" width="250px"></th>
+<th><img src="Figures/No_Score_Prob_0.png" width="250px"><p>Histogram</p></th>
+<th><img src="Figures/qq_No_Score_Prob_0.png" width="250px"><p>Q-Q plot</p></th>
+<th><img src="Figures/box_No_Score_Prob_0.png" width="250px"><p>Boxplot</p></th>
 </tr>
-</table><center>No_Score_Prob Histogram, Q-Q plot, Boxplot</center><br>
+</table>
+
+
+--------------------
+<br>
+
+
+**Opp_Field_Goal_Prob**
+
 <table>
 <tr>
-<th><img src="Figures/Opp_Field_Goal_Prob_0.png" width="250px"></th>
-<th><img src="Figures/qq_Opp_Field_Goal_Prob_0.png" width="250px"></th>
-<th><img src="Figures/box_Opp_Field_Goal_Prob_0.png" width="250px"></th>
+<th><img src="Figures/Opp_Field_Goal_Prob_0.png" width="250px"><p>Histogram</p></th>
+<th><img src="Figures/qq_Opp_Field_Goal_Prob_0.png" width="250px"><p>Q-Q plot</p></th>
+<th><img src="Figures/box_Opp_Field_Goal_Prob_0.png" width="250px"><p>Boxplot</p></th>
 </tr>
-</table><center>Opp_Field_Goal_Prob Histogram, Q-Q plot, Boxplot</center><br>
+</table>
+
+
+--------------------
+<br>
+
+
+**Opp_Safety_Prob**
+
 <table>
 <tr>
-<th><img src="Figures/Opp_Safety_Prob_0.png" width="250px"></th>
-<th><img src="Figures/qq_Opp_Safety_Prob_0.png" width="250px"></th>
-<th><img src="Figures/box_Opp_Safety_Prob_0.png" width="250px"></th>
+<th><img src="Figures/Opp_Safety_Prob_0.png" width="250px"><p>Histogram</p></th>
+<th><img src="Figures/qq_Opp_Safety_Prob_0.png" width="250px"><p>Q-Q plot</p></th>
+<th><img src="Figures/box_Opp_Safety_Prob_0.png" width="250px"><p>Boxplot</p></th>
 </tr>
-</table><center>Opp_Safety_Prob Histogram, Q-Q plot, Boxplot</center><br>
+</table>
+
+
+--------------------
+<br>
+
+
+**Opp_Touchdown_Prob**
+
 <table>
 <tr>
-<th><img src="Figures/Opp_Touchdown_Prob_0.png" width="250px"></th>
-<th><img src="Figures/qq_Opp_Touchdown_Prob_0.png" width="250px"></th>
-<th><img src="Figures/box_Opp_Touchdown_Prob_0.png" width="250px"></th>
+<th><img src="Figures/Opp_Touchdown_Prob_0.png" width="250px"><p>Histogram</p></th>
+<th><img src="Figures/qq_Opp_Touchdown_Prob_0.png" width="250px"><p>Q-Q plot</p></th>
+<th><img src="Figures/box_Opp_Touchdown_Prob_0.png" width="250px"><p>Boxplot</p></th>
 </tr>
-</table><center>Opp_Touchdown_Prob Histogram, Q-Q plot, Boxplot</center><br>
+</table>
+
+
+--------------------
+<br>
+
+
+**Field_Goal_Prob**
+
 <table>
 <tr>
-<th><img src="Figures/Field_Goal_Prob_0.png" width="250px"></th>
-<th><img src="Figures/qq_Field_Goal_Prob_0.png" width="250px"></th>
-<th><img src="Figures/box_Field_Goal_Prob_0.png" width="250px"></th>
+<th><img src="Figures/Field_Goal_Prob_0.png" width="250px"><p>Histogram</p></th>
+<th><img src="Figures/qq_Field_Goal_Prob_0.png" width="250px"><p>Q-Q plot</p></th>
+<th><img src="Figures/box_Field_Goal_Prob_0.png" width="250px"><p>Boxplot</p></th>
 </tr>
-</table><center>Field_Goal_Prob Histogram, Q-Q plot, Boxplot</center><br>
+</table>
+
+
+--------------------
+<br>
+
+
+**Safety_Prob**
+
 <table>
 <tr>
-<th><img src="Figures/Safety_Prob_0.png" width="250px"></th>
-<th><img src="Figures/qq_Safety_Prob_0.png" width="250px"></th>
-<th><img src="Figures/box_Safety_Prob_0.png" width="250px"></th>
+<th><img src="Figures/Safety_Prob_0.png" width="250px"><p>Histogram</p></th>
+<th><img src="Figures/qq_Safety_Prob_0.png" width="250px"><p>Q-Q plot</p></th>
+<th><img src="Figures/box_Safety_Prob_0.png" width="250px"><p>Boxplot</p></th>
 </tr>
-</table><center>Safety_Prob Histogram, Q-Q plot, Boxplot</center><br>
+</table>
+
+
+--------------------
+<br>
+
+
+**Touchdown_Prob**
+
 <table>
 <tr>
-<th><img src="Figures/Touchdown_Prob_0.png" width="250px"></th>
-<th><img src="Figures/qq_Touchdown_Prob_0.png" width="250px"></th>
-<th><img src="Figures/box_Touchdown_Prob_0.png" width="250px"></th>
+<th><img src="Figures/Touchdown_Prob_0.png" width="250px"><p>Histogram</p></th>
+<th><img src="Figures/qq_Touchdown_Prob_0.png" width="250px"><p>Q-Q plot</p></th>
+<th><img src="Figures/box_Touchdown_Prob_0.png" width="250px"><p>Boxplot</p></th>
 </tr>
-</table><center>Touchdown_Prob Histogram, Q-Q plot, Boxplot</center><br>
+</table>
+
+
+--------------------
+<br>
+
+
+**ExPoint_Prob**
+
 <table>
 <tr>
-<th><img src="Figures/ExPoint_Prob_0.png" width="250px"></th>
-<th><img src="Figures/qq_ExPoint_Prob_0.png" width="250px"></th>
-<th><img src="Figures/box_ExPoint_Prob_0.png" width="250px"></th>
+<th><img src="Figures/ExPoint_Prob_0.png" width="250px"><p>Histogram</p></th>
+<th><img src="Figures/qq_ExPoint_Prob_0.png" width="250px"><p>Q-Q plot</p></th>
+<th><img src="Figures/box_ExPoint_Prob_0.png" width="250px"><p>Boxplot</p></th>
 </tr>
-</table><center>ExPoint_Prob Histogram, Q-Q plot, Boxplot</center><br>
+</table>
+
+
+--------------------
+<br>
+
+
+**TwoPoint_Prob**
+
 <table>
 <tr>
-<th><img src="Figures/TwoPoint_Prob_0.png" width="250px"></th>
-<th><img src="Figures/qq_TwoPoint_Prob_0.png" width="250px"></th>
-<th><img src="Figures/box_TwoPoint_Prob_0.png" width="250px"></th>
+<th><img src="Figures/TwoPoint_Prob_0.png" width="250px"><p>Histogram</p></th>
+<th><img src="Figures/qq_TwoPoint_Prob_0.png" width="250px"><p>Q-Q plot</p></th>
+<th><img src="Figures/box_TwoPoint_Prob_0.png" width="250px"><p>Boxplot</p></th>
 </tr>
-</table><center>TwoPoint_Prob Histogram, Q-Q plot, Boxplot</center><br>
+</table>
+
+
+--------------------
+<br>
+
+
+**ExpPts**
+
 <table>
 <tr>
-<th><img src="Figures/ExpPts_0.png" width="250px"></th>
-<th><img src="Figures/qq_ExpPts_0.png" width="250px"></th>
-<th><img src="Figures/box_ExpPts_0.png" width="250px"></th>
+<th><img src="Figures/ExpPts_0.png" width="250px"><p>Histogram</p></th>
+<th><img src="Figures/qq_ExpPts_0.png" width="250px"><p>Q-Q plot</p></th>
+<th><img src="Figures/box_ExpPts_0.png" width="250px"><p>Boxplot</p></th>
 </tr>
-</table><center>ExpPts Histogram, Q-Q plot, Boxplot</center><br>
+</table>
+
+
+--------------------
+<br>
+
+
+**EPA**
+
 <table>
 <tr>
-<th><img src="Figures/EPA_0.png" width="250px"></th>
-<th><img src="Figures/qq_EPA_0.png" width="250px"></th>
-<th><img src="Figures/box_EPA_0.png" width="250px"></th>
+<th><img src="Figures/EPA_0.png" width="250px"><p>Histogram</p></th>
+<th><img src="Figures/qq_EPA_0.png" width="250px"><p>Q-Q plot</p></th>
+<th><img src="Figures/box_EPA_0.png" width="250px"><p>Boxplot</p></th>
 </tr>
-</table><center>EPA Histogram, Q-Q plot, Boxplot</center><br>
+</table>
+
+
+--------------------
+<br>
+
+
+**airEPA**
+
 <table>
 <tr>
-<th><img src="Figures/airEPA_0.png" width="250px"></th>
-<th><img src="Figures/qq_airEPA_0.png" width="250px"></th>
-<th><img src="Figures/box_airEPA_0.png" width="250px"></th>
+<th><img src="Figures/airEPA_0.png" width="250px"><p>Histogram</p></th>
+<th><img src="Figures/qq_airEPA_0.png" width="250px"><p>Q-Q plot</p></th>
+<th><img src="Figures/box_airEPA_0.png" width="250px"><p>Boxplot</p></th>
 </tr>
-</table><center>airEPA Histogram, Q-Q plot, Boxplot</center><br>
+</table>
+
+
+--------------------
+<br>
+
+
+**yacEPA**
+
 <table>
 <tr>
-<th><img src="Figures/yacEPA_0.png" width="250px"></th>
-<th><img src="Figures/qq_yacEPA_0.png" width="250px"></th>
-<th><img src="Figures/box_yacEPA_0.png" width="250px"></th>
+<th><img src="Figures/yacEPA_0.png" width="250px"><p>Histogram</p></th>
+<th><img src="Figures/qq_yacEPA_0.png" width="250px"><p>Q-Q plot</p></th>
+<th><img src="Figures/box_yacEPA_0.png" width="250px"><p>Boxplot</p></th>
 </tr>
-</table><center>yacEPA Histogram, Q-Q plot, Boxplot</center><br>
+</table>
+
+
+--------------------
+<br>
+
+
+**Home_WP_pre**
+
 <table>
 <tr>
-<th><img src="Figures/Home_WP_pre_0.png" width="250px"></th>
-<th><img src="Figures/qq_Home_WP_pre_0.png" width="250px"></th>
-<th><img src="Figures/box_Home_WP_pre_0.png" width="250px"></th>
+<th><img src="Figures/Home_WP_pre_0.png" width="250px"><p>Histogram</p></th>
+<th><img src="Figures/qq_Home_WP_pre_0.png" width="250px"><p>Q-Q plot</p></th>
+<th><img src="Figures/box_Home_WP_pre_0.png" width="250px"><p>Boxplot</p></th>
 </tr>
-</table><center>Home_WP_pre Histogram, Q-Q plot, Boxplot</center><br>
+</table>
+
+
+--------------------
+<br>
+
+
+**Away_WP_pre**
+
 <table>
 <tr>
-<th><img src="Figures/Away_WP_pre_0.png" width="250px"></th>
-<th><img src="Figures/qq_Away_WP_pre_0.png" width="250px"></th>
-<th><img src="Figures/box_Away_WP_pre_0.png" width="250px"></th>
+<th><img src="Figures/Away_WP_pre_0.png" width="250px"><p>Histogram</p></th>
+<th><img src="Figures/qq_Away_WP_pre_0.png" width="250px"><p>Q-Q plot</p></th>
+<th><img src="Figures/box_Away_WP_pre_0.png" width="250px"><p>Boxplot</p></th>
 </tr>
-</table><center>Away_WP_pre Histogram, Q-Q plot, Boxplot</center><br>
+</table>
+
+
+--------------------
+<br>
+
+
+**Home_WP_post**
+
 <table>
 <tr>
-<th><img src="Figures/Home_WP_post_0.png" width="250px"></th>
-<th><img src="Figures/qq_Home_WP_post_0.png" width="250px"></th>
-<th><img src="Figures/box_Home_WP_post_0.png" width="250px"></th>
+<th><img src="Figures/Home_WP_post_0.png" width="250px"><p>Histogram</p></th>
+<th><img src="Figures/qq_Home_WP_post_0.png" width="250px"><p>Q-Q plot</p></th>
+<th><img src="Figures/box_Home_WP_post_0.png" width="250px"><p>Boxplot</p></th>
 </tr>
-</table><center>Home_WP_post Histogram, Q-Q plot, Boxplot</center><br>
+</table>
+
+
+--------------------
+<br>
+
+
+**Away_WP_post**
+
 <table>
 <tr>
-<th><img src="Figures/Away_WP_post_0.png" width="250px"></th>
-<th><img src="Figures/qq_Away_WP_post_0.png" width="250px"></th>
-<th><img src="Figures/box_Away_WP_post_0.png" width="250px"></th>
+<th><img src="Figures/Away_WP_post_0.png" width="250px"><p>Histogram</p></th>
+<th><img src="Figures/qq_Away_WP_post_0.png" width="250px"><p>Q-Q plot</p></th>
+<th><img src="Figures/box_Away_WP_post_0.png" width="250px"><p>Boxplot</p></th>
 </tr>
-</table><center>Away_WP_post Histogram, Q-Q plot, Boxplot</center><br>
+</table>
+
+
+--------------------
+<br>
+
+
+**Win_Prob**
+
 <table>
 <tr>
-<th><img src="Figures/Win_Prob_0.png" width="250px"></th>
-<th><img src="Figures/qq_Win_Prob_0.png" width="250px"></th>
-<th><img src="Figures/box_Win_Prob_0.png" width="250px"></th>
+<th><img src="Figures/Win_Prob_0.png" width="250px"><p>Histogram</p></th>
+<th><img src="Figures/qq_Win_Prob_0.png" width="250px"><p>Q-Q plot</p></th>
+<th><img src="Figures/box_Win_Prob_0.png" width="250px"><p>Boxplot</p></th>
 </tr>
-</table><center>Win_Prob Histogram, Q-Q plot, Boxplot</center><br>
+</table>
+
+
+--------------------
+<br>
+
+
+**WPA**
+
 <table>
 <tr>
-<th><img src="Figures/WPA_0.png" width="250px"></th>
-<th><img src="Figures/qq_WPA_0.png" width="250px"></th>
-<th><img src="Figures/box_WPA_0.png" width="250px"></th>
+<th><img src="Figures/WPA_0.png" width="250px"><p>Histogram</p></th>
+<th><img src="Figures/qq_WPA_0.png" width="250px"><p>Q-Q plot</p></th>
+<th><img src="Figures/box_WPA_0.png" width="250px"><p>Boxplot</p></th>
 </tr>
-</table><center>WPA Histogram, Q-Q plot, Boxplot</center><br>
+</table>
+
+
+--------------------
+<br>
+
+
+**airWPA**
+
 <table>
 <tr>
-<th><img src="Figures/airWPA_0.png" width="250px"></th>
-<th><img src="Figures/qq_airWPA_0.png" width="250px"></th>
-<th><img src="Figures/box_airWPA_0.png" width="250px"></th>
+<th><img src="Figures/airWPA_0.png" width="250px"><p>Histogram</p></th>
+<th><img src="Figures/qq_airWPA_0.png" width="250px"><p>Q-Q plot</p></th>
+<th><img src="Figures/box_airWPA_0.png" width="250px"><p>Boxplot</p></th>
 </tr>
-</table><center>airWPA Histogram, Q-Q plot, Boxplot</center><br>
+</table>
+
+
+--------------------
+<br>
+
+
+**yacWPA**
+
 <table>
 <tr>
-<th><img src="Figures/yacWPA_0.png" width="250px"></th>
-<th><img src="Figures/qq_yacWPA_0.png" width="250px"></th>
-<th><img src="Figures/box_yacWPA_0.png" width="250px"></th>
+<th><img src="Figures/yacWPA_0.png" width="250px"><p>Histogram</p></th>
+<th><img src="Figures/qq_yacWPA_0.png" width="250px"><p>Q-Q plot</p></th>
+<th><img src="Figures/box_yacWPA_0.png" width="250px"><p>Boxplot</p></th>
 </tr>
-</table><center>yacWPA Histogram, Q-Q plot, Boxplot</center><br>
+</table>
+
+
+--------------------
+<br>
 
 
 #### San Francisco Building Permits 属性可视化
+
+
+**Unit**
+
 <table>
 <tr>
-<th><img src="Figures/Unit_1.png" width="250px"></th>
-<th><img src="Figures/qq_Unit_1.png" width="250px"></th>
-<th><img src="Figures/box_Unit_1.png" width="250px"></th>
+<th><img src="Figures/Unit_1.png" width="250px"><p>Histogram</p></th>
+<th><img src="Figures/qq_Unit_1.png" width="250px"><p>Q-Q plot</p></th>
+<th><img src="Figures/box_Unit_1.png" width="250px"><p>Boxplot</p></th>
 </tr>
-</table><center>Unit Histogram, Q-Q plot, Boxplot</center><br>
+</table>
+
+
+--------------------
+<br>
+
+
+**Number of Existing Stories**
+
 <table>
 <tr>
-<th><img src="Figures/Number of Existing Stories_1.png" width="250px"></th>
-<th><img src="Figures/qq_Number of Existing Stories_1.png" width="250px"></th>
-<th><img src="Figures/box_Number of Existing Stories_1.png" width="250px"></th>
+<th><img src="Figures/Number of Existing Stories_1.png" width="250px"><p>Histogram</p></th>
+<th><img src="Figures/qq_Number of Existing Stories_1.png" width="250px"><p>Q-Q plot</p></th>
+<th><img src="Figures/box_Number of Existing Stories_1.png" width="250px"><p>Boxplot</p></th>
 </tr>
-</table><center>Number of Existing Stories Histogram, Q-Q plot, Boxplot</center><br>
+</table>
+
+
+--------------------
+<br>
+
+
+**Number of Proposed Stories**
+
 <table>
 <tr>
-<th><img src="Figures/Number of Proposed Stories_1.png" width="250px"></th>
-<th><img src="Figures/qq_Number of Proposed Stories_1.png" width="250px"></th>
-<th><img src="Figures/box_Number of Proposed Stories_1.png" width="250px"></th>
+<th><img src="Figures/Number of Proposed Stories_1.png" width="250px"><p>Histogram</p></th>
+<th><img src="Figures/qq_Number of Proposed Stories_1.png" width="250px"><p>Q-Q plot</p></th>
+<th><img src="Figures/box_Number of Proposed Stories_1.png" width="250px"><p>Boxplot</p></th>
 </tr>
-</table><center>Number of Proposed Stories Histogram, Q-Q plot, Boxplot</center><br>
+</table>
+
+
+--------------------
+<br>
+
+
+**Estimated Cost**
+
 <table>
 <tr>
-<th><img src="Figures/Estimated Cost_1.png" width="250px"></th>
-<th><img src="Figures/qq_Estimated Cost_1.png" width="250px"></th>
-<th><img src="Figures/box_Estimated Cost_1.png" width="250px"></th>
+<th><img src="Figures/Estimated Cost_1.png" width="250px"><p>Histogram</p></th>
+<th><img src="Figures/qq_Estimated Cost_1.png" width="250px"><p>Q-Q plot</p></th>
+<th><img src="Figures/box_Estimated Cost_1.png" width="250px"><p>Boxplot</p></th>
 </tr>
-</table><center>Estimated Cost Histogram, Q-Q plot, Boxplot</center><br>
+</table>
+
+
+--------------------
+<br>
+
+
+**Revised Cost**
+
 <table>
 <tr>
-<th><img src="Figures/Revised Cost_1.png" width="250px"></th>
-<th><img src="Figures/qq_Revised Cost_1.png" width="250px"></th>
-<th><img src="Figures/box_Revised Cost_1.png" width="250px"></th>
+<th><img src="Figures/Revised Cost_1.png" width="250px"><p>Histogram</p></th>
+<th><img src="Figures/qq_Revised Cost_1.png" width="250px"><p>Q-Q plot</p></th>
+<th><img src="Figures/box_Revised Cost_1.png" width="250px"><p>Boxplot</p></th>
 </tr>
-</table><center>Revised Cost Histogram, Q-Q plot, Boxplot</center><br>
+</table>
+
+
+--------------------
+<br>
+
+
+**Proposed Units**
+
 <table>
 <tr>
-<th><img src="Figures/Proposed Units_1.png" width="250px"></th>
-<th><img src="Figures/qq_Proposed Units_1.png" width="250px"></th>
-<th><img src="Figures/box_Proposed Units_1.png" width="250px"></th>
+<th><img src="Figures/Proposed Units_1.png" width="250px"><p>Histogram</p></th>
+<th><img src="Figures/qq_Proposed Units_1.png" width="250px"><p>Q-Q plot</p></th>
+<th><img src="Figures/box_Proposed Units_1.png" width="250px"><p>Boxplot</p></th>
 </tr>
-</table><center>Proposed Units Histogram, Q-Q plot, Boxplot</center><br>
+</table>
+
+
+--------------------
+<br>
+
+
+**Plansets**
+
 <table>
 <tr>
-<th><img src="Figures/Plansets_1.png" width="250px"></th>
-<th><img src="Figures/qq_Plansets_1.png" width="250px"></th>
-<th><img src="Figures/box_Plansets_1.png" width="250px"></th>
+<th><img src="Figures/Plansets_1.png" width="250px"><p>Histogram</p></th>
+<th><img src="Figures/qq_Plansets_1.png" width="250px"><p>Q-Q plot</p></th>
+<th><img src="Figures/box_Plansets_1.png" width="250px"><p>Boxplot</p></th>
 </tr>
-</table><center>Plansets Histogram, Q-Q plot, Boxplot</center><br>
+</table>
+
+
+--------------------
+<br>
 
 
 
