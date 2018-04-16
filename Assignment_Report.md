@@ -19,8 +19,8 @@
 
 ### **数据摘要**
 - 对标称属性的处理
-    - 对于数据集1，共筛选出标称属性56个。
-    - 对于数据集2，共筛选出标称属性36个。 <br> 对于每一个标称属性，统计其所有值的频数。实现如下
+    - 对于数据集1，共筛选出标称属性56个，属性ID详见`Data/nominal_0`，。
+    - 对于数据集2，共筛选出标称属性36个，属性ID详见`Data/nominal_1`。 <br> 对于每一个标称属性，统计其所有值的频数，频数统计结果见`frequency_0.txt`和`frequency_1.txt`。实现如下
     ```python
         # database_id is the index of the database
         with open('Data/nominal_%d'%database_id,'r') as fp:

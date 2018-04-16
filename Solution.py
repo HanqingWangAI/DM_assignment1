@@ -308,7 +308,7 @@ def impute_figures(database_id):
 
 
 if __name__  == '__main__':
-    # main(1)
+    main(1)
     # showfigures(1)
-    impute(1)
+    # impute(1)
     # impute_figures(1)
