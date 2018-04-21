@@ -1,5 +1,5 @@
 # DM_assignment1
-The first assigment of course data mining.<br>
+The first assignment of course data mining.<br>
 Student_ID: 2120171064 <br>
 Name: Hanqing Wang
 
